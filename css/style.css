@@ -78,7 +78,7 @@ h6 {
 a, a:hover { 
   outline: none;
   text-decoration: none;
-  color: #F5388C;
+  color: #ffd500;
 }
 
 a:hover { 
@@ -270,7 +270,7 @@ footer {
   background: #1D1D1D;
   color: #FFF;
   margin-bottom: -20px;
-  border-top: 6px solid #F5388C;
+  border-top: 6px solid #ffd500;
 }
 
 footer p { 
