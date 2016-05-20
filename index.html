@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Ben_Koester</title>
+  <title>Synthetic LA</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -17,65 +17,31 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">Ben<span class="logo_colour">_Koester</span></a></h1>
-          <h2>Projects in Learning Analytics with Synthetic Data</h2>
+          <h1><a href="index.html">Synthetic<span class="logo_colour">_LA</span></a></h1>
+          <h2>Learning Analytics with Synthetic Data</h2>
         </div>
       </div>
-      <nav>
+      <!-- Import the navigation menu -->
+      <nav id="navMenu">
         <div id="menu_container">
-          <ul class="sf-menu" id="nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="grade_prediction.html">Grade Prediction</a></li>
-            <li><a href="persistence.html">Persistence</a></li>
-            <li><a href="populations.html">Student Populations</a></li>
-            <li><a href="progress_major.html">Progress to Major</a></li>
-	          <li><a href="student_network.html">Student Networks</a></li>
-            <li><a href="#">Example Drop Down</a>
-              <ul>
-                <li><a href="#">Drop Down One</a></li>
-                <li><a href="#">Drop Down Two</a>
-                  <ul>
-                    <li><a href="#">Sub Drop Down One</a></li>
-                    <li><a href="#">Sub Drop Down Two</a></li>
-                    <li><a href="#">Sub Drop Down Three</a></li>
-                    <li><a href="#">Sub Drop Down Four</a></li>
-                    <li><a href="#">Sub Drop Down Five</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Drop Down Three</a></li>
-                <li><a href="#">Drop Down Four</a></li>
-                <li><a href="#">Drop Down Five</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.php">Contact Us</a></li>
-          </ul>
-        </div>
+           <ul class="sf-menu" id="nav">
+           </ul>
+         </div>
       </nav>
     </header>
     <div id="site_content">
       <div id="sidebar_container">
-        <div class="sidebar">
-          <h3>Latest News</h3>
-          <h4>LASI</h4>
-          <h5>June, 2016</h5>
-          <p>2016 sees the redesign of our website. <a href="#">Read more</a></p>
-        </div>
-        <div class="sidebar">
+        <div class="sidebar"> <!-- we can put a bunch oif these in the sidebar container. -->
           <h3>Useful Links</h3>
           <ul>
-            <li><a href="#">First Link</a></li>
-            <li><a href="#">Another Link</a></li>
-            <li><a href="#">And Another</a></li>
-            <li><a href="#">Last One</a></li>
+            <li><a href="https://github.com/bkoester/PLA">bkoester@github</a></li>
+            <li><a href="https://cran.r-project.org/">R</a></li>
           </ul>
         </div>
         <div class="sidebar">
           <h3>More Useful Links</h3>
           <ul>
-            <li><a href="#">First Link</a></li>
-            <li><a href="#">Another Link</a></li>
-            <li><a href="#">And Another</a></li>
-            <li><a href="#">Last One</a></li>
+            <li><a href="#">(in progress...)</a></li>
           </ul>
         </div>
       </div>
@@ -99,6 +65,7 @@
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
   <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript" src="js/navBarScript.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       $('ul.sf-menu').sooperfish();

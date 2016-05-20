@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Grade Prediction</title>
+  <title>Student Networks</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -18,126 +18,91 @@
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
           <h1><a href="index.html">Student<span class="logo_colour">_Networks</span></a></h1>
-          <h2>How do students connect to one another in the courses they take?</h2>
+          <h2>How do students connect to one another through the courses they take?</h2>
         </div>
       </div>
-      <nav>
+      <!-- Import the navigation menu -->
+      <nav id="navMenu">
         <div id="menu_container">
-          <ul class="sf-menu" id="nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="examples.html">Examples</a></li>
-            <li><a href="page.html">A Page</a></li>
-            <li><a href="another_page.html">Another Page</a></li>
-            <li><a href="#">Example Drop Down</a>
-              <ul>
-                <li><a href="#">Drop Down One</a></li>
-                <li><a href="#">Drop Down Two</a>
-                  <ul>
-                    <li><a href="#">Sub Drop Down One</a></li>
-                    <li><a href="#">Sub Drop Down Two</a></li>
-                    <li><a href="#">Sub Drop Down Three</a></li>
-                    <li><a href="#">Sub Drop Down Four</a></li>
-                    <li><a href="#">Sub Drop Down Five</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Drop Down Three</a></li>
-                <li><a href="#">Drop Down Four</a></li>
-                <li><a href="#">Drop Down Five</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.php">Contact Us</a></li>
-          </ul>
-        </div>
-      </nav>
+           <ul class="sf-menu" id="nav">
+           </ul>
+         </div>
+       </nav>
     </header>
     <div id="site_content">
       <div id="sidebar_container">
-        <div class="sidebar">
-          <h3>Latest News</h3>
-          <h4>New Website Launched</h4>
-          <h5>January 1st, 2014</h5>
-          <p>2014 sees the redesign of our website. <a href="#">Read more</a></p>
-        </div>
-        <div class="sidebar">
+        <div class="sidebar"> <!-- we can put a bunch oif these in the sidebar container. -->
           <h3>Useful Links</h3>
           <ul>
-            <li><a href="#">First Link</a></li>
-            <li><a href="#">Another Link</a></li>
-            <li><a href="#">And Another</a></li>
-            <li><a href="#">Last One</a></li>
+            <li><a href="https://github.com/bkoester/PLA">bkoester@github</a></li>
+            <li><a href="https://cran.r-project.org/">R</a></li>
           </ul>
         </div>
         <div class="sidebar">
           <h3>More Useful Links</h3>
           <ul>
-            <li><a href="#">First Link</a></li>
-            <li><a href="#">Another Link</a></li>
-            <li><a href="#">And Another</a></li>
-            <li><a href="#">Last One</a></li>
+            <li><a href="#">(in progress...)</a></li>
           </ul>
         </div>
       </div>
       <div class="content">
-        <h1>Background</h1>
-        <p>Course enrollment data implicitly contains a record of interaction between students.
-          Students taking the same course contemporaneously are said to interact. Course co-enrollment
-          is a measure of a student's breadth of experience, albeit imperfect, as the strength of the
-          interaction depends on course structure, size, etc. Building and measuring the resulting networks
-          allows us to define communities students within the University and the clustering of these communities.</p>
-        <h1>Network Construction</h1>
-        <p>One begins with a list of students and the courses (and terms) that student took.
-          Network construction quickly becomes computationally burdensome from an unconstrained list, both in terms of
-          CPU and memory.
-          Much of this can be mitigated by careful choice of the student populations, for instance, only considering
-          individuals within a major. CPU requirements can also be reduced by restricting the number courses including
-          in the clustering.</p>
-          <h2>Unweighted Networks from Covariance/Correlation Matrices</h2>
-          <p>This is a simple way of buidling a student network:</p>
-          <ol>
-            <li> Build a student-course indicator (0 or 1) matrix (students in rows, courses in columns).</li>
-            <li> Take the outer product of the matrix with itself to create a student covariance matrix.</li>
-            <li> Build a weighted edgelist from this OR </li>
-            <li> Threshold the matrix and create an adjacency matrix with unweighted edgelist.</li>
-          </ol>
-          <p> We typically restrict this to a single cohort of students, which amounts to of order
-              4,000 students over several hundred courses.</p>
+          <h1>Background</h1>
+          <p>Course enrollment data implicitly contains a record of interaction between students.
+            Students taking the same course contemporaneously are said to interact. Course co-enrollment
+            is a measure of a student's breadth of experience, albeit imperfect, as the strength of the
+            interaction depends on course structure, size, etc. Building and measuring the resulting networks
+            allows us to define communities students within the University and the clustering of these communities.</p>
+          <h1>Network Construction</h1>
+          <p>One begins with a list of students and the courses (and terms) that student took.
+            Network construction quickly becomes computationally burdensome from an unconstrained list, both in terms of
+            CPU and memory.
+            Much of this can be mitigated by careful choice of the student populations, for instance, only considering
+            individuals within a major. CPU requirements can also be reduced by restricting the number courses including
+            in the clustering.</p>
+            <h2>Unweighted Networks from Covariance/Correlation Matrices</h2>
+            <p>This is a simple way of buidling a student network:</p>
+            <ol>
+              <li> Build a student-course indicator (0 or 1) matrix (students in rows, courses in columns).</li>
+              <li> Take the outer product of the matrix with itself to create a student covariance matrix.</li>
+              <li> Build a weighted edgelist from this OR </li>
+              <li> Threshold the matrix and create an adjacency matrix with unweighted edgelist.</li>
+            </ol>
+            <p> We typically restrict this to a single cohort of students, which amounts to of order
+                4,000 students over several hundred courses.</p>
 
-          <h2>Weighted Networks from Student Pair Iteration</h2>
+            <h2>Weighted Networks from Student Pair Iteration</h2>
 
-          <h1>Analysis</h1>
-          <h1>Visualization</h1>
+            <h1>Analysis</h1>
+            <h1>Visualization</h1>
 
-          <h1>Proof of Concept: Example</h1>
-          <p>Can a network recover obvious features of the student population?</p>
-          <p>Using the synthetic data included in the tables of the PLA-MOOC, we can explore this question.
-            For a cohort of students admitted in TERM=110, we consider the co-enrollment of graduating students from a restricted subset
-            of majors (~2000 students). We build an adjacency matrix by considering the enrollment of these students in courses with < 10000
-            total enrollees over the life of the course; this lightens the computation burden and also offers greater resoultion
-            among students because it excludes many of the most commonly taken first-term courses.</p>
-          <p>The student-student covariance-correlation matrix is computed, and to reduce computation, we keep only correlations > 0.5,
-            setting all other for zero. This adjacency matrix is coverted to an <b>igraph</b> object in R. Using the <b>leading.eigenvector.community</b>
-            function supplied with <b>igraph</b>, communities are defined and labeled.
-            Node and edge lists are exported to GELPHI, where the visualization is created using the ForceAtlas 2 algorithm.</p>
-          <img src="images/sythetic.term110.sub10000.hires.nonodes.png"style="width:750px">
-          <p>Colors represent the communities identified, and representative majors in each community are labeled.</p>
-          <p>The choice of force algorithm and the edge weights (correlation coefficents > 0.5) drive this visualization, and
-             these synthetic communities, while incomplete (due to our restricted set of students), separate along unsuprising lines:
-             Biopsych, Psych, and Neuroscience are highly-populated, strongly clustered communities. Psych serves as a bridge to humanities and Economics.
-             Physics and Mathematics do not cluster with these communites nor with each other, and form weak links between Econ
-             and Biology.</p>
-          <p>A more interactive, but slow-loading version of this network can be found
-            <a href="gexfjs/term.100.sub10000.html">here</a>. </p>
-
-
-
-      </div>
+            <h1>Proof of Concept: Example</h1>
+            <p>Can a network recover obvious features of the student population?</p>
+            <p>Using the synthetic data included in the tables of the PLA-MOOC, we can explore this question.
+              For a cohort of students admitted in TERM=110, we consider the co-enrollment of graduating students from a restricted subset
+              of majors (~2000 students). We build an adjacency matrix by considering the enrollment of these students in courses with < 10000
+              total enrollees over the life of the course; this lightens the computation burden and also offers greater resoultion
+              among students because it excludes many of the most commonly taken first-term courses.</p>
+            <p>The student-student covariance-correlation matrix is computed, and to reduce computation, we keep only correlations > 0.5,
+              setting all other for zero. This adjacency matrix is coverted to an <b>igraph</b> object in R. Using the <b>leading.eigenvector.community</b>
+              function supplied with <b>igraph</b>, communities are defined and labeled.
+              Node and edge lists are exported to GELPHI, where the visualization is created using the ForceAtlas 2 algorithm.</p>
+            <img src="images/sythetic.term110.sub10000.hires.nonodes.png"style="width:750px">
+            <p>Colors represent the communities identified, and representative majors in each community are labeled.</p>
+            <p>The choice of force algorithm and the edge weights (correlation coefficents > 0.5) drive this visualization, and
+               these synthetic communities, while incomplete (due to our restricted set of students), separate along unsuprising lines:
+               Biopsych, Psych, and Neuroscience are highly-populated, strongly clustered communities. Psych serves as a bridge to humanities and Economics.
+               Physics and Mathematics do not cluster with these communites nor with each other, and form weak links between Econ
+               and Biology.</p>
+            <p>A more interactive, but slow-loading version of this network can be found
+              <a href="gexfjs/term.100.sub10000.html">here</a>. </p>
     </div>
+  </div>
     <div id="scroll">
       <a title="Scroll to the top" class="top" href="#"><img src="images/top.png" alt="top" /></a>
     </div>
     <footer>
-      <p><img src="images/twitter.png" alt="twitter" />&nbsp;<img src="images/facebook.png" alt="facebook" />&nbsp;<img src="images/rss.png" alt="rss" /></p>
-      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.php">Contact Us</a></p>
+      <!-- <p><img src="images/twitter.png" alt="twitter" />&nbsp;<img src="images/facebook.png" alt="facebook" />&nbsp;<img src="images/rss.png" alt="rss" /></p>
+      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.php">Contact Us</a></p>-->
       <p>Copyright &copy; CSS3_contrast | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
     </footer>
   </div>
@@ -145,6 +110,7 @@
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
   <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript" src="js/navBarScript.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       $('ul.sf-menu').sooperfish();

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Grade Prediction</title>
+  <title>Progress to Major</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -17,8 +17,8 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">Grade<span class="logo_colour">_Prediction</span></a></h1>
-          <h2>Which students do not perform "as expected?"</h2>
+          <h1><a href="index.html">Progress<span class="logo_colour">_</span></a></h1>
+          <h2>How do majors move through the curriculum?"</h2>
         </div>
       </div>
       <!-- Import the navigation menu -->
@@ -47,17 +47,15 @@
       </div>
       <div class="content">
           <h1>Background</h1>
-          <p>Using grades as measures of performance, we ask the question "which students do not perform as expected?"
-            We can reshape and address this question in various forms. As a first pass, grade point average in other classes (GPAO)
-            forms an expectation for how a student should perform, and the difference between the actual grade and GPA
-            in other classes measures a "grade anomaly" or "grade penalty". </p>
-          <h2>Results</h2>
-            <p>We can compare these between groups, for instance,males and females in a course:</p>
-            <img src="images/physics135_plot.png"style="width:750px">
-            <p>In Physics 135, we see that the simple grade penalty (grade-GPAO)
-              is larger for females than males (-0.32 vs. -0.13), and that this difference is not covered by the standard error.
-              The difference is seen for students at most GPAOs. Optimal matching on HSGPA, and entrance exam scores reduces,
-              but does not eliminated this gap.</p>
+          <p>The flow of students through courses contained within major is of interest to both students
+             and educators. Students may wish to know common course sequences taken by their predecessors:
+             are there many ways to complete the major, or are there paths that lead to better outcomes?
+             Educators meanwhile may seek to understand the level of preparation students have reached
+             as they progress to courses later in the curriculum: are students using introductory course
+             locally, or transferring them in? Are they skipping recommended courses?</p>
+          <h1>Analysis</h1>
+          <p>Sankey diagrams and sunburst diagrams both give general overviews of this flow. Using PLA-MOOC
+          data, we demonstrate this with a <a href="sequences/sunburst.html">sunburst diagram</a>.</p>
     </div>
   </div>
     <div id="scroll">

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Grade Prediction</title>
+  <title>Student Populations</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -17,8 +17,8 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">Grade<span class="logo_colour">_Prediction</span></a></h1>
-          <h2>Which students do not perform "as expected?"</h2>
+          <h1><a href="index.html">Student<span class="logo_colour">_Populations</span></a></h1>
+          <h2>Who takes this class and what grade do they get?</h2>
         </div>
       </div>
       <!-- Import the navigation menu -->
@@ -47,17 +47,14 @@
       </div>
       <div class="content">
           <h1>Background</h1>
-          <p>Using grades as measures of performance, we ask the question "which students do not perform as expected?"
-            We can reshape and address this question in various forms. As a first pass, grade point average in other classes (GPAO)
-            forms an expectation for how a student should perform, and the difference between the actual grade and GPA
-            in other classes measures a "grade anomaly" or "grade penalty". </p>
-          <h2>Results</h2>
-            <p>We can compare these between groups, for instance,males and females in a course:</p>
-            <img src="images/physics135_plot.png"style="width:750px">
-            <p>In Physics 135, we see that the simple grade penalty (grade-GPAO)
-              is larger for females than males (-0.32 vs. -0.13), and that this difference is not covered by the standard error.
-              The difference is seen for students at most GPAOs. Optimal matching on HSGPA, and entrance exam scores reduces,
-              but does not eliminated this gap.</p>
+          <p>The cross-section of students taking a course and their performance is a basic question. </p>
+          <h1>Analysis</h1>
+          <p>Treemaps provide a compact way to visually display rich, hierarchical information. For several terms
+              of students taking Physics I, we ask "what were their eventual majors and mean grades?"
+              Cell size in the treeemap indicates the total proportion by major, and the mean grade
+              is contained in color coding. We also label majors by division (engineering, humanities, professional,
+              social science, science)</p>
+          <img src="images/physics.140.majors.png"style="width:750px">
     </div>
   </div>
     <div id="scroll">
