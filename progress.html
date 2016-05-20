@@ -31,20 +31,23 @@
     </header>
     <div id="site_content">
       <div id="sidebar_container">
-        <div class="sidebar"> <!-- we can put a bunch oif these in the sidebar container. -->
-          <h3>Useful Links</h3>
-          <ul>
-            <li><a href="https://github.com/bkoester/PLA">bkoester@github</a></li>
-            <li><a href="https://cran.r-project.org/">R</a></li>
-          </ul>
+          <div class="sidebar"> <!-- we can put a bunch oif these in the sidebar container. -->
+            <h3>R and D3js Tools</h3>
+            <ul>
+              <li><a href="https://github.com/bkoester/PLA/make.sunburst.input.R">make.sunburst.input.R</a></li>
+              <li><a href="https://bl.ocks.org/kerryrodden/7090426">D3js/Sunburst</a></li>
+              <li><a href="https://bost.ocks.org/mike/sankey/">Sankey Diagrams</a></li>
+            </ul>
+          </div>
+          <div class="sidebar">
+            <h3>Data</h3>
+            <ul>
+              <li><a href="https://github.com/bkoester/PLA/student.course.csv">student.course.csv</a></li>
+              <li><a href="https://github.com/bkoester/PLA/student.record.csv">student.record.csv</a></li>
+              <li><a href="sequences/sunburst.html">Synthetic Sunburst Diagram</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="sidebar">
-          <h3>More Useful Links</h3>
-          <ul>
-            <li><a href="#">(in progress...)</a></li>
-          </ul>
-        </div>
-      </div>
       <div class="content">
           <h1>Background</h1>
           <p>The flow of students through courses contained within major is of interest to both students
@@ -54,8 +57,32 @@
              as they progress to courses later in the curriculum: are students using introductory course
              locally, or transferring them in? Are they skipping recommended courses?</p>
           <h1>Analysis</h1>
-          <p>Sankey diagrams and sunburst diagrams both give general overviews of this flow. Using PLA-MOOC
-          data, we demonstrate this with a <a href="sequences/sunburst.html">sunburst diagram</a>.</p>
+          <p><a href="https://bost.ocks.org/mike/sankey/">Sankey diagrams</a>
+            and <a href="https://bl.ocks.org/kerryrodden/7090426">sunburst diagrams</a> both give general overviews of this flow. Below is
+            a screenshot of a sunburst diagram that shows the flow of physics majors through the University
+            of Michigan's Physics Department (to preserve anonomity we only show screenshots, and an interactive
+            sunburst diagram with synthetic data follows the description of this animation):</p>
+          <p><img src="images/physics.path.gif"style="width:500px"><p>
+          <p>This GIF demostrates how, as a user drags the cursor from inner rings to outer rings, arcs light up
+            and "breadcrumb trail" is recorded in the right margin. The inner most ring gives a break down
+            of Physics courses taken by first term Physics majors. It reveals that 52.9% of physics majors take
+            NO physics classes (none) their first term. A fraction of these students go on to take Physics 140/141
+            their second term (8.75% of all physics majors). A fraction of these students continue to Physics 240/241
+            in their third term (5.39% of the total), and most of these student continue to 340/341 the very next term
+            (4.38% of all physics majors). Thus we can say that 4.38% of our majors take no physics their first term
+            and then complete the introductory sequence the next three consecutive terms.
+           </p>
+
+           <p>Using PLA-MOOC <a href="https://github.com/bkoester/PLA/student.record.csv">student record</a>
+             and <a href="https://github.com/bkoester/PLA/student.course.csv">student course</a> tables,
+             our <a href="https://github.com/bkoester/PLA/make.sunburst.input.R">custom R code</a>, and modifications to
+              D3 sunburst scripts (see the source for the page), we can create a fully interactive
+             <a href="sequences/sunburst.html">sunburst diagram</a> where we explain the layout in more detail. Additional
+             work in progress involves the use of <a href="https://bost.ocks.org/mike/sankey/">Sankey Diagrams</a>
+             to study the flow of students through majors; for our uses, it seems that these will require a
+             more substantial rewrite or reorganization of existing libraries.</p>
+
+
     </div>
   </div>
     <div id="scroll">

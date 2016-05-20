@@ -32,16 +32,18 @@
     <div id="site_content">
       <div id="sidebar_container">
         <div class="sidebar"> <!-- we can put a bunch oif these in the sidebar container. -->
-          <h3>Useful Links</h3>
+          <h3>R code</h3>
           <ul>
-            <li><a href="https://github.com/bkoester/PLA">bkoester@github</a></li>
-            <li><a href="https://cran.r-project.org/">R</a></li>
+            <li><a href="https://github.com/bkoester/PLA/grade.penalty.module.R">grade.penalty.module.R</a></li>
+            <li><a href="https://github.com/bkoester/PLA/wiki">PLA wiki</a></li>
+            <li><a href="https://cran.r-project.org/web/packages/optmatch/index.html">Ben Hansen's optmatch</a></li>
           </ul>
         </div>
         <div class="sidebar">
-          <h3>More Useful Links</h3>
+          <h3>Data</h3>
           <ul>
-            <li><a href="#">(in progress...)</a></li>
+            <li><a href="https://github.com/bkoester/PLA/student.course.csv">student.course.csv</a></li>
+            <li><a href="https://github.com/bkoester/PLA/student.record.csv">student.record.csv</a></li>
           </ul>
         </div>
       </div>
@@ -56,8 +58,13 @@
             <img src="images/physics135_plot.png"style="width:750px">
             <p>In Physics 135, we see that the simple grade penalty (grade-GPAO)
               is larger for females than males (-0.32 vs. -0.13), and that this difference is not covered by the standard error.
-              The difference is seen for students at most GPAOs. Optimal matching on HSGPA, and entrance exam scores reduces,
-              but does not eliminated this gap.</p>
+              The difference is seen for students at most GPAOs, and regression models that attempt to control
+              for confounding variables do not elimnate this gender-associated gap.
+              <a href="https://cran.r-project.org/web/packages/optmatch/index.html">Optimal matching</a> on HSGPA, and entrance exam scores reduces,
+              but does not eliminate this gap either. <p>Finally, the analysis code the produces these results can be found
+                <a href="https://github.com/bkoester/PLA/grade.penalty.module.R">here</a>, where details on regression, matching,
+                and estimation of standard errors are contained in the code.
+                The associated <a href="https://github.com/bkoester/PLA/wiki">wiki</a> gives details on how to run the code.
     </div>
   </div>
     <div id="scroll">
