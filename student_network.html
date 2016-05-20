@@ -32,16 +32,33 @@
     <div id="site_content">
       <div id="sidebar_container">
         <div class="sidebar"> <!-- we can put a bunch oif these in the sidebar container. -->
-          <h3>Useful Links</h3>
+          <h3>Network Visualization</h3>
           <ul>
-            <li><a href="https://github.com/bkoester/PLA">bkoester@github</a></li>
-            <li><a href="https://cran.r-project.org/">R</a></li>
+            <li><a href="https://gephi.org/">Gephi</a></li>
+            <li><a href="https://marketplace.gephi.org/plugin/gexf-js-web-viewer/">Gexf-Js Webviewer</a></li>
+            <li><a href="http://sigmajs.org/">SigmaJs</a></li>
+            <li><a href="http://bkoester.github.io/gexfjs/term.100.sub10000.html">Example</a></li>
+          </ul>
+        </div>
+        <div class="sidebar"> <!-- we can put a bunch oif these in the sidebar container. -->
+          <h3>R Tools/Code</h3>
+          <ul>
+            <li><a href="https://github.com/bkoester/PLA/build.student.network.R">Student Networks (N < 5000)</a></li>
+            <li><a href="http://igraph.org/r/">igraph: network analysis</a></li>
           </ul>
         </div>
         <div class="sidebar">
-          <h3>More Useful Links</h3>
+          <h3>Data</h3>
           <ul>
-            <li><a href="#">(in progress...)</a></li>
+            <li><a href="https://github.com/bkoester/PLA/student.course.csv">student.course.csv</a></li>
+            <li><a href="https://github.com/bkoester/PLA/student.record.csv">student.record.csv</a></li>
+            <li><a href="data/synthetic.term110.sub10000.gephi">Gephi Sample Input</a></li>
+          </ul>
+        </div>
+        <div class="sidebar">
+          <h3>More Tools</h3>
+          <ul>
+            <li><a href="https://github.com/karepker/thesis">Large student networks (N > 50,000)</a></li>
           </ul>
         </div>
       </div>
@@ -51,15 +68,19 @@
             Students taking the same course contemporaneously are said to interact. Course co-enrollment
             is a measure of a student's breadth of experience, albeit imperfect, as the strength of the
             interaction depends on course structure, size, etc. Building and measuring the resulting networks
-            allows us to define communities students within the University and the clustering of these communities.</p>
+            allows us to define communities students within the University and to study the clustering of these communities.
+            Links to data and libraries, code etc. are included below, and may also be found on the left of the page.</p>
           <h1>Network Construction</h1>
-          <p>One begins with a list of students and the courses (and terms) that student took.
+          <p>One begins with a list of
+            <a href="https://github.com/bkoester/PLA/student.course.csv">students</a> and the
+            <a href="https://github.com/bkoester/PLA/student.course.csv">courses</a>
+            (and terms) that student took.
             Network construction quickly becomes computationally burdensome from an unconstrained list, both in terms of
             CPU and memory.
             Much of this can be mitigated by careful choice of the student populations, for instance, only considering
             individuals within a major. CPU requirements can also be reduced by restricting the number courses including
             in the clustering.</p>
-            <h2>Unweighted Networks from Covariance/Correlation Matrices</h2>
+            <h2>Unweighted <a href="https://github.com/bkoester/PLA/build.student.network.R">Networks</a> from Covariance/Correlation Matrices</h2>
             <p>This is a simple way of buidling a student network:</p>
             <ol>
               <li> Build a student-course indicator (0 or 1) matrix (students in rows, courses in columns).</li>
@@ -70,22 +91,18 @@
             <p> We typically restrict this to a single cohort of students, which amounts to of order
                 4,000 students over several hundred courses.</p>
 
-            <h2>Weighted Networks from Student Pair Iteration</h2>
-
-            <h1>Analysis</h1>
-            <h1>Visualization</h1>
-
             <h1>Proof of Concept: Example</h1>
             <p>Can a network recover obvious features of the student population?</p>
-            <p>Using the synthetic data included in the tables of the PLA-MOOC, we can explore this question.
+            <p>Using the synthetic data included in the tables of the <a href="https://github.com/bkoester/PLA/">PLA-MOOC</a>, we can explore this question.
               For a cohort of students admitted in TERM=110, we consider the co-enrollment of graduating students from a restricted subset
               of majors (~2000 students). We build an adjacency matrix by considering the enrollment of these students in courses with < 10000
               total enrollees over the life of the course; this lightens the computation burden and also offers greater resoultion
               among students because it excludes many of the most commonly taken first-term courses.</p>
             <p>The student-student covariance-correlation matrix is computed, and to reduce computation, we keep only correlations > 0.5,
-              setting all other for zero. This adjacency matrix is coverted to an <b>igraph</b> object in R. Using the <b>leading.eigenvector.community</b>
-              function supplied with <b>igraph</b>, communities are defined and labeled.
-              Node and edge lists are exported to GELPHI, where the visualization is created using the ForceAtlas 2 algorithm.</p>
+              setting all other for zero. This adjacency matrix is coverted to an <a href="http://igraph.org">igraph</a> object in R.
+              Using the <a href="http://www.inside-r.org/packages/cran/igraph/docs/leading.eigenvector.community"> functions</a>
+               supplied with <b>igraph</b>, communities are defined and labeled.
+              Node and edge lists are exported to <a href="https://gephi.org/">Gephi</a>, where the visualization is created using the ForceAtlas 2 algorithm.</p>
             <img src="images/sythetic.term110.sub10000.hires.nonodes.png"style="width:750px">
             <p>Colors represent the communities identified, and representative majors in each community are labeled.</p>
             <p>The choice of force algorithm and the edge weights (correlation coefficents > 0.5) drive this visualization, and
@@ -93,8 +110,9 @@
                Biopsych, Psych, and Neuroscience are highly-populated, strongly clustered communities. Psych serves as a bridge to humanities and Economics.
                Physics and Mathematics do not cluster with these communites nor with each other, and form weak links between Econ
                and Biology.</p>
-            <p>A more interactive, but slow-loading version of this network can be found
-              <a href="gexfjs/term.100.sub10000.html">here</a>. </p>
+            <p><a href="https://marketplace.gephi.org/plugin/gexf-js-web-viewer/">Gexf-Js</a> allows a more
+               <a href="http://bkoester.github.io/gexfjs/term.100.sub10000.html">interactive (but slow-loading)</a> version of this network. You can
+               also download the <a href="data/synthetic.term110.sub10000.gephi">Gephi file</a> and manipulate the network in more detail.</p>
     </div>
   </div>
     <div id="scroll">
