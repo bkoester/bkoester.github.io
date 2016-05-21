@@ -51,9 +51,32 @@
       </div>
       <div class="content">
         <h1>Learning Analytics with Synthetic Data</h1>
-        <p>Sythetic student data allows us to develop and share ideas and projects, without sharing or distributing sensitive data.</p>
+        <p>Sythetic student data allows us to develop and share ideas and projects,
+          without sharing or distributing sensitive data. That is, we share data that statistically mimics
+          real student data, but does not contain real students!</p>
         <p>This site contains an array of tools, data, and projects that we've assembled to aid
-           in the developement and distribution of university-level learning analytics methods and analysis.</p>
+           in the development and distribution of university-level learning analytics methods and analysis.
+           This should give a sense of what kinds of
+           things administrative LA data contain and how we might analyze and visualize those data using well-known tools. All
+           of this code can be download and run on student data by individuals on different campuses anywhere.</p>
+
+           <p>Most of what follows makes use of the synthetic data contained in tables originally distributed with the
+           <a href="https://www.coursera.org/course/pla">Practical Learning Analytics MOOC</a>. The
+           <a href="https://github.com/bkoester/PLA/student.course.csv">student course</a> and
+           <a href="https://github.com/bkoester/PLA/student.record.csv">student record</a> tables
+           along with code are located <a href="https://github.com/bkoester/PLA">here</a> on Github.
+           Most of the analysis was originally done in R, and made use of several popular R packages,
+           such as <a href="https://cran.r-project.org/web/packages/treemap/index.html">treemap</a>
+           and <a href="https://cran.r-project.org/web/packages/treemap/index.html">optmatch</a>,
+           and most recently, <a href="https://cran.r-project.org/web/packages/igraph/index.html">optmatch</a>.
+           Since the initiation of the PLA-MOOC, we have
+           constructed several new R scripts whose aim is to aid in visualizing the data contained in
+           these tables. In many cases, R ingests, reduces, and formats the student tables,
+           converting them into something that more sophisticated visualization tools can use.
+           As an example for their portability, interactivity, and awesomeness, the
+           javascript <a href="https://d3js.org/"> D3js</a> libraries are especially useful for visualzation.
+           </p>
+
         <!-- <h2>Browser Compatibility</h2> -->
       </div>
     </div>
